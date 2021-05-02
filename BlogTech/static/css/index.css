@@ -1,0 +1,57 @@
+:root {
+  --primary-color: #007EFF;
+}
+.bg-inicio {
+  background: #ffbd08ef;
+  height: 540px;
+}
+
+.inicio {
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: "info image";
+  align-items: center;
+}
+
+.info {
+  grid-area: "info";
+  color: #fff;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.info h1 {
+  font-family: "Roboto Medium";
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+
+
+.info a {
+  margin: 20px auto;
+  font-size: 1.3em;
+  background: var(--primary-color);
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  display: block;
+  width: 200px;
+  text-align: center;
+  transition: all 1s;
+}
+
+.info a:hover {
+  background: #fff;
+  color: #007EFF;
+}
+
+.image {
+  grid-area: "image";
+}
+
+.image img {
+  width: 100%;
+}

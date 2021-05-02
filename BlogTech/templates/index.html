@@ -1,6 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+  <title>BlogTech - Home</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock head %}
+
 {% block context %}
-<h1>Olá está tudo funcionando!</h1>
+<div class="bg-inicio">
+  <div class="inicio">
+    <div class="info">
+      <h1>Seja bem-vindo/a!</h1>
+      <p>
+        Crie tutoriais compartilhe com o mundo e ganhe seguidores. 
+      </p>
+
+      <div>
+        {% if not user.is_authenticated %}
+          <a href="{% url 'accounts:signup' %}" class="btn btn-signup">Cadastrar-se</a>  
+        {% else %}
+          <a href="{% url 'accounts:signup' %}" class="btn btn-post">Ver todos os posts</a>        
+        {% endif %}
+      </div>
+    </div>
+  
+    <div class="image">
+      <div>
+        <img src="{% static 'images/undraw_typewriter_i8xd.svg' %}" alt="">
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock context %}

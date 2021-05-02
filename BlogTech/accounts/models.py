@@ -33,6 +33,7 @@ SEXO_CHOICES = {
 class OthersInfo(models.Model):
     user = models.OneToOneField(auth.get_user_model(), on_delete=models.CASCADE)
     sexo = models.CharField(max_length=9, choices=SEXO_CHOICES)
+    bio = models.TextField(blank=True)
     image = models.ImageField(upload_to=user_directory_path, blank=True, validators=[file_size_validator])
     avatar = models.CharField(max_length=100)
     created_et = models.DateTimeField(auto_now=True)
